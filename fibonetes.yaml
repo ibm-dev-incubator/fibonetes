@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fibonetes
+spec:
+  template:
+    metadata:
+      name: fibonetes
+    spec:
+      containers:
+      - name: fibonetes
+        image: kubemaster-1:80/fibonetes:latest
+      restartPolicy: Never
