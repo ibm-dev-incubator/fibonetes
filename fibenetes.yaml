@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: echo3
+spec:
+  template:
+    metadata:
+      name: pyprint
+    spec:
+      containers:
+      - name: pyprint
+        image: python:3
+        env:
+          - name: NUBMER_1
+            value: "1"
+          - name: NUMBER_2
+            value: "1"
+          - name: COUNT
+            value: "1"
+          - name: STOP_COUNT
+            value: "10"
+        command:
+          - python3
+          - fib.py
+      restartPolicy: Never
+#      backoffLimit: 4
